@@ -1,0 +1,8 @@
+Host *
+  IgnoreUnknown AddKeysToAgent,UseKeychain
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/zaheerAamir # Default key (You can also use company key)
+
+Host github.com
+  Port 22
