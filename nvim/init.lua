@@ -1,0 +1,13 @@
+require("base")
+require("plugins")
+
+require("telescope")
+require("fugitive")
+require("treesitter")
+require("lsp")
+require("lsp-lua")
+require("nvim-autopairs").setup({})
+require("tree")
+require("indent")
+require("colors")
+require("lualine-config")
