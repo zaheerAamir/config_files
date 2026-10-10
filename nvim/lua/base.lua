@@ -1,3 +1,6 @@
+vim.g.mapleader = " " -- MUST be first, before everything
+vim.g.maplocalleader = " " -- good practice to set this too
+
 local opt = vim.opt
 opt.number = true
 
@@ -33,10 +36,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		})
 	end,
 })
+vim.opt.signcolumn = "yes"
 
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-CR>", "o<Esc>", { noremap = true })
-vim.g.mapleader = " "
+--vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>wv", vim.cmd.Ex)
 vim.api.nvim_set_keymap("n", "<A-Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-S-Tab>", ":BufferLineCloseOthers<CR>", { noremap = true, silent = true })

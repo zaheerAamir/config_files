@@ -21,3 +21,19 @@ vim.diagnostic.config({
 	underline = true,
 	severity_sort = true,
 })
+
+vim.api.nvim_set_hl(0, "NeoTreeGitAdded", {
+	fg = "#A7C080",
+})
+
+vim.api.nvim_set_hl(0, "NeoTreeGitModified", {
+	fg = "#DBBC7F",
+})
+
+vim.api.nvim_set_hl(0, "NeoTreeGitDeleted", {
+	fg = "#E67E80",
+})
+
+vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", {
+	fg = "#7FBBB3",
+})

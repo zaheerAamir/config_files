@@ -1,5 +1,4 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd([[packadd packer.nvim]])
 
@@ -19,14 +18,19 @@ return require("packer").startup(function(use)
 		tag = "0.1.6",
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
+		branch = "master",
 	})
 
 	use("tpope/vim-fugitive")
 
-	-- plugins.lua
-	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+	-- nvim-treesitter (modern main branch setup)
 
-	use("nvim-treesitter/playground")
+	use({ "nvim-treesitter/nvim-treesitter", branch = "master", run = ":TSUpdate" })
+
+	use({
+		"nvim-treesitter/playground",
+		cmd = "TSPlaygroundToggle",
+	})
 
 	use({
 		"williamboman/mason.nvim",
@@ -49,20 +53,18 @@ return require("packer").startup(function(use)
 
 	use({
 		"stevearc/conform.nvim",
-		config = function()
-			require("conform").setup({
-				formatters_by_ft = {
-					lua = { "stylua" },
-				},
-				format_on_save = {
-					timeout_ms = 500,
-					lsp_fallback = true,
-				},
-			})
-		end,
 	})
 
-	use("nvim-tree/nvim-tree.lua")
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+	})
+
 	use("nvim-tree/nvim-web-devicons")
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -81,7 +83,7 @@ return require("packer").startup(function(use)
 				options = {
 					offsets = {
 						{
-							filetype = "NvimTree",
+							filetype = "neo-tree",
 							text = "File Explorer",
 							highlight = "Directory",
 							separator = true,

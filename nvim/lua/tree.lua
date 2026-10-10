@@ -1,47 +1,84 @@
--- disable netrw at the very start of your init.lua
+-- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-local api = require("nvim-tree.api")
-vim.keymap.set("n", "<c-e>", api.tree.toggle)
+require("neo-tree").setup({
+	close_if_last_window = true,
+	popup_border_style = "rounded",
 
-local function my_on_attach(bufnr)
-	local function opts(desc)
-		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-	end
+	enable_git_status = true,
+	enable_diagnostics = true,
 
-	-- default mappings
-	api.config.mappings.default_on_attach(bufnr)
-
-	-- custom mappings
-	vim.keymap.set("n", "<c-e>", api.tree.toggle, opts("Toggle"))
-	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
-end
-
-require("nvim-tree").setup({
-	on_attach = my_on_attach,
-	filters = {
-		custom = { "^.git$" },
+	sources = {
+		"filesystem",
 	},
 
-	actions = {
-		open_file = { quit_on_open = true },
+	filesystem = {
+		follow_current_file = {
+			enabled = true,
+		},
+
+		hijack_netrw_behavior = "open_default",
+
+		filtered_items = {
+			hide_dotfiles = false,
+			hide_gitignored = false,
+			hide_hidden = false,
+		},
+
+		use_libuv_file_watcher = true,
 	},
-	update_focused_file = {
-		enable = true,
-		update_cwd = true,
-	},
-	git = {
-		enable = false,
-	},
-	diagnostics = {
-		enable = true,
-		show_on_dirs = true,
-		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
+
+	event_handlers = {
+		{
+			event = "file_opened",
+			handler = function()
+				require("neo-tree.command").execute({ action = "close" })
+			end,
 		},
 	},
+
+	window = {
+		position = "left",
+		width = 35,
+		mappings = {
+			["<cr>"] = "open",
+		},
+	},
+
+	source_selector = {
+		winbar = false,
+		statusline = false,
+	},
+
+	default_component_configs = {
+		indent = {
+			with_expanders = true,
+			expander_collapsed = "",
+			expander_expanded = "",
+		},
+
+		git_status = {
+			symbols = {
+				added = "A",
+				modified = "M",
+				deleted = "D",
+				renamed = "R",
+				untracked = "U",
+				ignored = "◌",
+				unstaged = "󰄱",
+				staged = "",
+				conflict = "",
+			},
+		},
+
+		name = {
+			use_git_status_colors = true,
+		},
+	},
+})
+
+vim.keymap.set("n", "<C-e>", "<cmd>Neotree toggle left<CR>", {
+	noremap = true,
+	silent = true,
 })

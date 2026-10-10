@@ -17,10 +17,12 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, opts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, opts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts, "Go to implementation")
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-	vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
-	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev({ float = true }), opts)
+	vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+	vim.keymap.set("n", "[d", function()
+		vim.diagnostic.goto_prev({ float = true })
+	end, opts)
 
 	-- Add this to your init.lua
 	vim.api.nvim_set_keymap(
@@ -59,24 +61,6 @@ local on_attach = function(client, bufnr)
 		"<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>",
 		{ noremap = true, silent = true }
 	)
-	vim.api.nvim_set_keymap(
-		"n",
-		"<leader>gc",
-		"<Cmd>lua require('jdtls').generate_constructor()<CR>",
-		{ noremap = true, silent = true }
-	)
-	vim.api.nvim_set_keymap(
-		"n",
-		"<leader>gs",
-		"<Cmd>lua require('jdtls').generate_getters_setters()<CR>",
-		{ noremap = true, silent = true }
-	)
-	vim.api.nvim_set_keymap(
-		"n",
-		"<leader>gu",
-		"<Cmd>lua require('jdtls').generate_getters_setters(false)<CR>",
-		{ noremap = true, silent = true }
-	)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -84,6 +68,10 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local root_markers = { "gradlew", "mvnw", ".git", "pom.xml" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
+
+if not root_dir then
+	return
+end
 
 local config = {
 	cmd = {
@@ -170,15 +158,20 @@ local config = {
 					{
 						name = "JavaSE-17",
 						path = "/usr/lib/jvm/java-17-openjdk",
-						default = true,
 					},
 					{
 						name = "JavaSE-22",
 						path = "/usr/lib/jvm/java-22-openjdk",
+					},
+					{
+						name = "JavaSE-21",
+						path = "/usr/lib/jvm/java-21-openjdk/",
+						default = true,
 					},
 				},
 			},
 		},
 	},
 }
+
 jdtls.start_or_attach(config)

@@ -7,7 +7,6 @@ require("nvim-treesitter.configs").setup({
 		"lua",
 		"vim",
 		"vimdoc",
-		"query",
 		"html",
 		"css",
 		"json",
@@ -15,6 +14,8 @@ require("nvim-treesitter.configs").setup({
 		"bash",
 		"xml",
 		"java",
+		"prisma",
+		"python",
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)

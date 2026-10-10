@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["bufferline.nvim"] = {
-    config = { "\27LJ\2\nÓ\1\0\0\6\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0004\4\3\0005\5\3\0>\5\1\4=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\foffsets\1\0\1\foffsets\0\1\0\5\14separator\2\14highlight\14Directory\ttext\18File Explorer\rfiletype\rNvimTree\15text_align\tleft\nsetup\15bufferline\frequire\0" },
+    config = { "\27LJ\2\nÓ\1\0\0\6\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0004\4\3\0005\5\3\0>\5\1\4=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\foffsets\1\0\1\foffsets\0\1\0\5\ttext\18File Explorer\14separator\2\14highlight\14Directory\rfiletype\rneo-tree\15text_align\tleft\nsetup\15bufferline\frequire\0" },
     loaded = true,
     path = "/home/aamir/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
@@ -106,7 +106,6 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["conform.nvim"] = {
-    config = { "\27LJ\2\nÌ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\17lsp_fallback\2\15timeout_ms\3ô\3\21formatters_by_ft\1\0\2\21formatters_by_ft\0\19format_on_save\0\blua\1\0\1\blua\0\1\2\0\0\vstylua\nsetup\fconform\frequire\0" },
     loaded = true,
     path = "/home/aamir/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
@@ -142,6 +141,16 @@ _G.packer_plugins = {
     path = "/home/aamir/.local/share/nvim/site/pack/packer/start/mini.indentscope",
     url = "https://github.com/echasnovski/mini.indentscope"
   },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/home/aamir/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/aamir/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/aamir/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -171,17 +180,12 @@ _G.packer_plugins = {
   },
   ["nvim-silicon"] = {
     commands = { "Silicon" },
-    config = { "\27LJ\2\nP\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\1'\3\3\0B\1\2\2'\2\4\0&\0\2\0L\0\2\0\14_code.png\24!%Y-%m-%dT%H-%M-%SZ\tdate\aos\a./¾\1\0\0\b\0\b\0\0286\0\0\0006\2\1\0009\2\2\0029\2\3\0026\4\1\0009\4\4\0049\4\5\0046\6\1\0009\6\4\0069\6\6\6B\6\1\0A\4\0\2'\5\a\0B\2\3\0A\0\0\0016\0\1\0009\0\2\0009\0\3\0006\2\1\0009\2\4\0029\2\5\0026\4\1\0009\4\4\0049\4\6\4B\4\1\0A\2\0\2'\3\a\0D\0\3\0\a:e\25nvim_get_current_buf\22nvim_buf_get_name\bapi\16fnamemodify\afn\bvim\nprintÜ\1\1\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\rlanguage\0\voutput\0\1\0\6\ntheme\fTwoDark\tfont3JetBrainsMono Nerd Font=34;Noto Color Emoji=34\rlanguage\0\15background\f#94e2d5\voutput\0\21disable_defaults\2\nsetup\17nvim-silicon\frequire\0" },
+    config = { "\27LJ\2\nP\0\0\4\0\5\0\b'\0\0\0006\1\1\0009\1\2\1'\3\3\0B\1\2\2'\2\4\0&\0\2\0L\0\2\0\14_code.png\24!%Y-%m-%dT%H-%M-%SZ\tdate\aos\a./¾\1\0\0\b\0\b\0\0286\0\0\0006\2\1\0009\2\2\0029\2\3\0026\4\1\0009\4\4\0049\4\5\0046\6\1\0009\6\4\0069\6\6\6B\6\1\0A\4\0\2'\5\a\0B\2\3\0A\0\0\0016\0\1\0009\0\2\0009\0\3\0006\2\1\0009\2\4\0029\2\5\0026\4\1\0009\4\4\0049\4\6\4B\4\1\0A\2\0\2'\3\a\0D\0\3\0\a:e\25nvim_get_current_buf\22nvim_buf_get_name\bapi\16fnamemodify\afn\bvim\nprintÜ\1\1\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0003\3\4\0=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\rlanguage\0\voutput\0\1\0\6\ntheme\fTwoDark\voutput\0\rlanguage\0\tfont3JetBrainsMono Nerd Font=34;Noto Color Emoji=34\21disable_defaults\2\15background\f#94e2d5\nsetup\17nvim-silicon\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
     path = "/home/aamir/.local/share/nvim/site/pack/packer/opt/nvim-silicon",
     url = "https://github.com/michaelrommel/nvim-silicon"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/aamir/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -199,8 +203,11 @@ _G.packer_plugins = {
     url = "https://github.com/wbthomason/packer.nvim"
   },
   playground = {
-    loaded = true,
-    path = "/home/aamir/.local/share/nvim/site/pack/packer/start/playground",
+    commands = { "TSPlaygroundToggle" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/aamir/.local/share/nvim/site/pack/packer/opt/playground",
     url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
@@ -226,18 +233,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+try_loadstring("\27LJ\2\nÓ\1\0\0\6\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0004\4\3\0005\5\3\0>\5\1\4=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\foffsets\1\0\1\foffsets\0\1\0\5\ttext\18File Explorer\14separator\2\14highlight\14Directory\rfiletype\rneo-tree\15text_align\tleft\nsetup\15bufferline\frequire\0", "config", "bufferline.nvim")
+time([[Config for bufferline.nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: conform.nvim
-time([[Config for conform.nvim]], true)
-try_loadstring("\27LJ\2\nÌ\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\19format_on_save\1\0\2\17lsp_fallback\2\15timeout_ms\3ô\3\21formatters_by_ft\1\0\2\21formatters_by_ft\0\19format_on_save\0\blua\1\0\1\blua\0\1\2\0\0\vstylua\nsetup\fconform\frequire\0", "config", "conform.nvim")
-time([[Config for conform.nvim]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-try_loadstring("\27LJ\2\nÓ\1\0\0\6\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0004\4\3\0005\5\3\0>\5\1\4=\4\5\3=\3\a\2B\0\2\1K\0\1\0\foptions\1\0\1\foptions\0\foffsets\1\0\1\foffsets\0\1\0\5\14separator\2\14highlight\14Directory\ttext\18File Explorer\rfiletype\rNvimTree\15text_align\tleft\nsetup\15bufferline\frequire\0", "config", "bufferline.nvim")
-time([[Config for bufferline.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -247,6 +250,13 @@ pcall(vim.api.nvim_create_user_command, 'Silicon', function(cmdargs)
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'nvim-silicon'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Silicon ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'TSPlaygroundToggle', function(cmdargs)
+          require('packer.load')({'playground'}, { cmd = 'TSPlaygroundToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'playground'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('TSPlaygroundToggle ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 
